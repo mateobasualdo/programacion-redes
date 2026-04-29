@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Main {
 
-	// Códigos para colores en consola
 	public static final String RESET = "\u001B[0m";
 	public static final String RED = "\u001B[31m";
 	public static final String GREEN = "\u001B[32m";
@@ -19,7 +18,7 @@ public class Main {
 		sc.close();
 	}
 
-	// --- EJERCICIOS 1 ---
+	// EJERCICIO 1
 	
 	public static ArrayList<String> ejercicio1(Scanner sc) {
 		ArrayList<String> lista = new ArrayList<>();
@@ -37,7 +36,7 @@ public class Main {
 		return lista;
 	}
 	
-	// --- EJERCICIOS 2  ---
+	// EJERCICIO 2
 
 	public static void ejercicio2(Scanner sc, ArrayList<String> lista) {
 		System.out.println("\nNombre a buscar:");
@@ -49,7 +48,7 @@ public class Main {
 		}
 	}
 	
-	// --- EJERCICIOS 3  ---
+	// EJERCICIO 3
 
 	public static void ejercicio3(ArrayList<String> lista) {
 		if (lista.size() >= 3) {
@@ -60,7 +59,7 @@ public class Main {
 		}
 	}
 	
-	// --- EJERCICIOS 4  ---
+	// EJERCICIO 4 
 
 	public static void ejercicio4(ArrayList<String> lista) {
 		System.out.println("\n--- Recorridos ---");
@@ -79,7 +78,7 @@ public class Main {
 		}
 	}
 
-	// --- EJERCICIOS 5 ---
+	// EJERCICIO 5
 
 	public static void ejercicio5(Scanner sc) {
 		System.out.println("\nIngrese una frase:");
@@ -94,7 +93,7 @@ public class Main {
 		System.out.println("Palabras: " + palabras.size());
 		System.out.println("Más larga: " + larga);
 		
-    // --- EJERCICIOS 6 ---
+    // EJERCICIO 6
 		System.out.println("Normalizando...");
 		for (int i = 0; i < palabras.size(); i++) {
 			String p = palabras.get(i).toLowerCase().trim();
@@ -104,7 +103,7 @@ public class Main {
 		System.out.println("Resultado: " + palabras);
 	}
 
-	// --- EJERCICIOS 7 A 9 (Mapas) ---
+	// EJERCICIOS 7 8 y 9
 
 	public static void ejercicio7y8y9(Scanner sc) {
 		HashMap<String, String> dicc = new HashMap<>();
@@ -125,7 +124,7 @@ public class Main {
 		System.out.println();
 	}
 
-	// --- EJERCICIO 10 (Contador) ---
+	// EJERCICIO 10
 
 	public static void ejercicio10(Scanner sc) {
 		System.out.println("\nIngrese frase para contar:");
@@ -138,7 +137,7 @@ public class Main {
 		System.out.println("Frecuencia: " + contador);
 	}
 
-	// --- EJERCICIO 11 (Sets) ---
+	// EJERCICIO 11
 
 	public static void ejercicio11(Scanner sc) {
 		ArrayList<Integer> nums = new ArrayList<>();
@@ -151,7 +150,7 @@ public class Main {
 		System.out.println("Sin repetidos: " + sinRepetir);
 	}
 
-	// --- EJERCICIO 12 (Sistema Alumnos) ---
+	// EJERCICIO 12
 
 	public static void ejercicio12(Scanner sc) {
 		ArrayList<String> nombres = new ArrayList<>();
