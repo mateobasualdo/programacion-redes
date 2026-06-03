@@ -1,22 +1,14 @@
 package tp2;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 public class ejercicio1 {
 	
@@ -31,7 +23,14 @@ public class ejercicio1 {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ejercicio1 ej = new ejercicio1("prueba1.txt");
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Ingresa un dato: ");
+		String dato = sc.nextLine();
+		sc.close();
+		
+		ej.guardarDato(dato);
 
 	}
 
