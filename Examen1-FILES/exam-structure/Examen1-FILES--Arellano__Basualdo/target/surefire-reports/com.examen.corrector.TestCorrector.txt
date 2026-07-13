@@ -1,0 +1,107 @@
+-------------------------------------------------------------------------------
+Test set: com.examen.corrector.TestCorrector
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 7, Errors: 1, Skipped: 0, Time elapsed: 0.219 s <<< FAILURE! - in com.examen.corrector.TestCorrector
+com.examen.corrector.TestCorrector.testCargaValoresCorrectos  Time elapsed: 0.138 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe haber 2 partidas cargadas ==> expected: <2> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at com.examen.corrector.TestCorrector.testCargaValoresCorrectos(TestCorrector.java:138)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.examen.corrector.TestCorrector.testMesMasVictorias  Time elapsed: 0.006 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: El mes '04' tiene 3 victorias (vs '05'=1 y '06'=1), debe ser el ganador ==> expected: <04> but was: <SIN DATOS>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
+	at com.examen.corrector.TestCorrector.testMesMasVictorias(TestCorrector.java:229)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.examen.corrector.TestCorrector.testEstandarizadorCreaCsv  Time elapsed: 0.005 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe existir juegos.csv en la misma ubicacion que el .dat original ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at com.examen.corrector.TestCorrector.testEstandarizadorCreaCsv(TestCorrector.java:74)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.examen.corrector.TestCorrector.testCargaCantidadCorrecta  Time elapsed: 0.004 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe cargar 2 partidas ignorando la linea de encabezados ==> expected: <2> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at com.examen.corrector.TestCorrector.testCargaCantidadCorrecta(TestCorrector.java:122)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.examen.corrector.TestCorrector.testEstandarizadorBorraOriginal  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: El archivo .dat original debe ser eliminado ==> expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:235)
+	at com.examen.corrector.TestCorrector.testEstandarizadorBorraOriginal(TestCorrector.java:84)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.examen.corrector.TestCorrector.testEstandarizadorSeparaCorrectamente  Time elapsed: 0.003 s  <<< ERROR!
+java.nio.file.NoSuchFileException: C:\Users\Redes-04\AppData\Local\Temp\junit15560517883249847369\juegos.csv
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at java.base/java.nio.file.Files.newBufferedReader(Files.java:2922)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3412)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3453)
+	at com.examen.corrector.TestCorrector.testEstandarizadorSeparaCorrectamente(TestCorrector.java:94)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.examen.corrector.TestCorrector.testGuardarDatos  Time elapsed: 0.004 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
+	at com.examen.corrector.TestCorrector.testGuardarDatos(TestCorrector.java:256)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.examen.corrector.TestCorrector.testEliminarPartida  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Deben cargarse 3 partidas ==> expected: <3> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at com.examen.corrector.TestCorrector.testEliminarPartida(TestCorrector.java:194)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

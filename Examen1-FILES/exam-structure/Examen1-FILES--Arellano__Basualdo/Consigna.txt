@@ -1,0 +1,125 @@
+Desarrollar una aplicación en Java aplicando los principios de la Programación Orientada a Objetos (POO) para procesar, estandarizar, analizar y proteger mediante encriptación un historial de partidas de League of Legends, creando además una interfaz de consola amigable y colorida.
+
+Contexto y Archivo de Entrada: Se proveerá un archivo de texto llamado juegos.dat generado por un programa externo. Este archivo almacena el historial de partidas de un jugador. La primera línea contiene las cabeceras y las siguientes líneas los datos de cada partida (fecha, victoria/derrota, primera sangre, primera torreta, asesinatos, muertes y asistencias). Actualmente, el archivo tiene un formato defectuoso y desordenado.
+
+Requerimientos Técnicos:
+
+
+
+
+
+Estandarización y Encriptación Inicial (Pre-Menú):
+
+
+
+
+
+Al iniciar, el programa debe verificar si existe el archivo original juegos.dat. De ser así, debe leerlo automáticamente y reestructurar los datos hacia un formato estandarizado, separando cada campo por punto y coma (;).
+
+
+
+Seguridad (Clase Cipher): Antes de guardar este nuevo formato en el archivo destino (llamado juegos_encriptado.csv), los datos deben ser encriptados con AES utilizando la librería javax.crypto.Cipher vista en clase.
+
+
+
+Deberán Guardar la clave de encriptación en un archivo de texto (AES.key)  (se adjuntó líneas de código para recuperarla la clave)
+
+
+
+Una vez creado el archivo encriptado de forma exitosa, el programa debe eliminar el archivo original juegos.dat.
+
+
+
+Nota: Si al abrir el programa el archivo juegos.dat ya no existe, pero sí existe juegos_encriptado.csv, el programa debe leerlo y desencriptarlo (en memoria, no crear un archivo con datos desencriptados) para cargar los datos en memoria.
+
+
+
+Manejo de Errores Silencioso:
+
+
+
+
+
+Ningún error o excepción (por ejemplo, fallos al leer/escribir, errores de clave de encriptación, datos corruptos) debe mostrarse por la consola del usuario.
+
+
+
+Todas las excepciones deben ser capturadas y registradas en un archivo llamado crash.log. Uso de la clase Logger nativa de Java.
+
+
+
+Interacción con el Usuario (Menú Principal): Una vez completada la estandarización y carga en memoria, el programa desplegará un menú infinito interactivo.
+
+
+
+
+
+Diseño del Menú: El menú debe estar prolijamente tabulado, ordenado y debe utilizar colores (mediante códigos de escape ANSI) para resaltar las opciones.
+
+Opciones del Menú:
+
+
+
+
+
+A. Ingresar nueva partida: Permite cargar manualmente los datos de una nueva partida. Estos datos se mantendrán en memoria y se guardarán (encriptados) en el archivo .csv recién al cerrar el programa.
+
+
+
+B. Mostrar historial: Muestra todos los datos de las partidas por consola.
+
+
+
+
+
+Formato visual: Los datos deben mostrarse en formato de tabla (tabulados), sin los punto y coma (;).
+
+
+
+Colores: Las cabeceras de la tabla deben ir en un color distintivo. Las filas con los datos de las partidas deben alternar entre dos colores a elección del alumno (por ejemplo, una fila verde, la siguiente blanca, la siguiente verde) para facilitar la lectura.
+
+
+
+C. Estadísticas del Jugador: Procesa los datos en memoria y muestra por pantalla:
+
+
+
+
+
+Mejor Mes: En qué mes del año se obtuvo la mayor cantidad de victorias.
+
+
+
+Cálculo del KDA general: El KDA es una métrica que evalúa el desempeño del jugador. Se calcula con la fórmula: (Asesinatos + Asistencias) / Muertes. (Nota: En el juego, tener 0 muertes es un "KDA Perfecto". El programa debe manejar matemáticamente este caso especial para evitar una excepción por división por cero).
+
+
+
+D. Guardar y Salir: Toma toda la lista de partidas en memoria, la encripta nuevamente y sobrescribe el archivo juegos_encriptado.csv, finalizando la ejecución.
+
+
+
+// Guardar clave
+
+// 1. Extraen los bytes de la clave y los convierten a texto legible (Base64-String)
+
+String claveEnTexto = Base64.getEncoder().encodeToString(claveAES.getEncoded()); 
+
+// 2. Guardan ese texto en un archivo (AES.key) 
+
+// Recuperar clave
+
+// 1. Leen el texto completo del archivo
+
+// 2. Decodifican el texto de Base64 volviendo a los bytes originales 
+
+byte[] bytesClave = Base64.getDecoder().decode(textoLeido); 
+
+// 3. Reconstruyen el objeto SecretKey usando SecretKeySpec 
+
+claveRecuperada = new SecretKeySpec(bytesClave, 0, bytesClave.length, "AES");
+
+
+
+
+
+// Ahora usan 'claveRecuperada' en el Cipher para desencriptar el CSV
