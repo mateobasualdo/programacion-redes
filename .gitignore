@@ -1,0 +1,5 @@
+*.class
+nube/
+descargas/
+*.bin
+*.log
